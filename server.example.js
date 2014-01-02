@@ -33,9 +33,9 @@ var map = new Map();
 
 // The `MapgenLoad` plugin loads existing map data from disk. The argument given
 // to it is the directory to store map data in.
-var MapgenLoad = require("./plugins/mapgen-load"),
-    mapgen_load = new MapgenLoad(__dirname + "/map");
-map.add_generator(mapgen_load.modify.bind(mapgen_load));
+// var MapgenLoad = require("./plugins/mapgen-load"),
+//     mapgen_load = new MapgenLoad(__dirname + "/map");
+// map.add_generator(mapgen_load.modify.bind(mapgen_load));
 
 // The `MapgenSimplex` plugin generates pseudorandom terrain using an algorithm
 // related to _Perlin Noise_, [Simplex Noise](http://en.wikipedia.org/wiki/Simplex_noise).
@@ -47,27 +47,27 @@ map.add_generator(mapgen_simplex.modify.bind(mapgen_simplex));
 // The `MapgenWater` plugin fills the bottom of the map, up to a specified `y`
 // value, with water. It does this by replacing all air blocks with a `y` less
 // than that specified with water.
-var MapgenWater = require("./plugins/mapgen-water"),
-    mapgen_water = new MapgenWater(100);
-map.add_generator(mapgen_water.modify.bind(mapgen_water));
+// var MapgenWater = require("./plugins/mapgen-water"),
+//     mapgen_water = new MapgenWater(5);
+// map.add_generator(mapgen_water.modify.bind(mapgen_water));
 
 // The `MapgenGlowstone` plugin places glowstone randomly. Yay! Great for
 // testing lighting, or just impressing your friends.
-var MapgenGlowstone = require("./plugins/mapgen-glowstone"),
-    mapgen_glowstone = new MapgenGlowstone();
-map.add_generator(mapgen_glowstone.modify.bind(mapgen_glowstone));
+// var MapgenGlowstone = require("./plugins/mapgen-glowstone"),
+//     mapgen_glowstone = new MapgenGlowstone();
+// map.add_generator(mapgen_glowstone.modify.bind(mapgen_glowstone));
 
 // The `MapgenGlassGrid` plugin puts a grid of glass pillars in the world.
 // Again this is mostly useful for debugging.
-var MapgenGlassGrid = require("./plugins/mapgen-glass-grid"),
-    mapgen_glass_grid = new MapgenGlassGrid();
-map.add_generator(mapgen_glass_grid.modify.bind(mapgen_glass_grid));
+// var MapgenGlassGrid = require("./plugins/mapgen-glass-grid"),
+//     mapgen_glass_grid = new MapgenGlassGrid();
+// map.add_generator(mapgen_glass_grid.modify.bind(mapgen_glass_grid));
 
 // The `MapgenFloor` plugin puts a single layer of bedrock at the bottom of the
 // world. This stops people digging through to nothing by accident.
-var MapgenFloor = require("./plugins/mapgen-floor"),
-    mapgen_floor = new MapgenFloor();
-map.add_generator(mapgen_floor.modify.bind(mapgen_floor));
+// var MapgenFloor = require("./plugins/mapgen-floor"),
+//     mapgen_floor = new MapgenFloor();
+// map.add_generator(mapgen_floor.modify.bind(mapgen_floor));
 
 // This is the `Game` object. It's (probably) the core of your server. It holds
 // a lot of the wiring between different components.
