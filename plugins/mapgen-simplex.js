@@ -21,9 +21,12 @@ MapgenSimplex.prototype.modify = function modify(chunk, cb) {
               chunk.set_block_type(x,z,y,12);
             } else {
               // grass
-              var valx = this.noise.noise3D((chunk.x * 16 + x) / 4, 64, (chunk.z * 16 + z) / 4);
+              var valx = this.noise.noise3D((chunk.x * 16 + x) / 4, y/32, (chunk.z * 16 + z) / 4);
               if (valx < 0.1) {
                 chunk.set_block_type(x,z,y,31);
+              }
+              else if (valx < 0.12) {
+                chunk.set_block_type(x,z,y,86);
               }
             }
           } else {
@@ -37,6 +40,5 @@ MapgenSimplex.prototype.modify = function modify(chunk, cb) {
       }
     }
   }
-
   return cb(null, chunk);
 };

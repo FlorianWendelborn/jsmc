@@ -40,9 +40,13 @@ var map = new Map();
 // The `MapgenSimplex` plugin generates pseudorandom terrain using an algorithm
 // related to _Perlin Noise_, [Simplex Noise](http://en.wikipedia.org/wiki/Simplex_noise).
 // The argument you see here is the "seed" value.
-var MapgenSimplex = require("./plugins/mapgen-simplex"),
-    mapgen_simplex = new MapgenSimplex(1);
-map.add_generator(mapgen_simplex.modify.bind(mapgen_simplex));
+// var MapgenSimplex = require("./plugins/mapgen-simplex"),
+//     mapgen_simplex = new MapgenSimplex(1);
+// map.add_generator(mapgen_simplex.modify.bind(mapgen_simplex));
+
+var MapgenImage = require("./plugins/mapgen-Image");
+    mapgen_image = new MapgenImage(1);
+map.add_generator(mapgen_image.modify.bind(mapgen_image));
 
 // The `MapgenWater` plugin fills the bottom of the map, up to a specified `y`
 // value, with water. It does this by replacing all air blocks with a `y` less
