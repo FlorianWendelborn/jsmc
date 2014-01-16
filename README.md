@@ -18,7 +18,7 @@ Features
 Compatibility
 -------------
 
-The latest supported version of Minecraft client is 1.4.6.
+The latest supported version of Minecraft client is 1.6.4.
 
 Installation
 ------------
@@ -38,8 +38,3 @@ License
 -------
 
 3-clause BSD. A copy is included with the source.
-
-This is a Fork
---------------
-
-[original](https://github.com/deoxxa/jsmc)
